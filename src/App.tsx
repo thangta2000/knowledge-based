@@ -48,13 +48,13 @@ function App() {
       jumpValue,
     });
 
-    setResult(status)
+    setResult(status);
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-gray-600 text-center leading-7" style={{ textWrap: "balance" }}>
+        <CardTitle className="text-gray-600 text-center leading-7 balance">
           Hệ thống đánh giá chỉ số phát triển của trẻ em
         </CardTitle>
       </CardHeader>
