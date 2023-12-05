@@ -250,8 +250,9 @@ function calculateMedium(obj: { [key in keyof Rules]: number }) {
     const value = obj[key as keyof Rules];
     const index = Object.keys(obj).indexOf(key) + 1;
 
-    sumValues += value;
-    sumIndicesTimesValues += index * value;
+    const currentIndex = 2 * value - (value ^ 2);
+    sumValues += currentIndex;
+    sumIndicesTimesValues += index * currentIndex;
   }
 
   const result = sumIndicesTimesValues / sumValues || 0;
@@ -292,7 +293,7 @@ export const calculate = ({
 
   const medium = calculateMedium(result) as keyof typeof mapResult;
 
-  console.log(result, medium)
+  console.log(result, medium);
 
   return mapResult[medium];
 };
